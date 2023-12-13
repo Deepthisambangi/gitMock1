@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git') {
+            steps {
+               git 'https://github.com/Deepthisambangi/gitMock1.git'
+            }
+        }
+        stage('Execute') {
+            steps {
+               sh '''javac Hello.java
+               java Hello'''
+            }
+        }
+    }
+}
